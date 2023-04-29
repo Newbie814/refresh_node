@@ -1,20 +1,29 @@
-const path = require('path');
+// const fs = require('fs');
 
-console.log('separator: ', path.sep);
+const { readFile, writeFile } = require('fs');
 
-const filePath = path.join('/content', 'subfolder', 'test.txt');
-
-console.log('filePath: ', filePath);
-
-const base = path.basename(filePath);
-
-console.log('base: ', base);
-
-const absolutePath = path.resolve(
-  __dirname,
-  'content',
-  'subfolder',
-  'test.txt'
-);
-
-console.log('absolutePath: ', absolutePath);
+readFile('./content/first.txt', 'utf8', (err, result) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  const first = result;
+  readFile('./content/second.txt', 'utf8', (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    const second = result;
+    writeFile(
+      './content/result-async.txt',
+      `Here is the result: ${first}, ${second}, for my async file.`,
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log(result);
+      }
+    );
+  });
+});
