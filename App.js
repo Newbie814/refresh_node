@@ -1,16 +1,20 @@
-// Modules
-const person = require('./modules/names');
-require('./modules/mind-grenade'); // modules are wrapped in a function and executed. Any function that is invoked in the module will be executed, even if it is not exported.
+const path = require('path');
 
-const sayHello = (name) => {
-  console.log(`Hello there ${name}`);
-};
+console.log('separator: ', path.sep);
 
-sayHello('Sandra');
-sayHello(person.person1);
-sayHello(person.person2);
-// console.log('app.js module:', module);
-// person.showModule();
+const filePath = path.join('/content', 'subfolder', 'test.txt');
 
-// console.log('items: ', person.items);
-// console.log('single person: ', person.singlePerson);
+console.log('filePath: ', filePath);
+
+const base = path.basename(filePath);
+
+console.log('base: ', base);
+
+const absolutePath = path.resolve(
+  __dirname,
+  'content',
+  'subfolder',
+  'test.txt'
+);
+
+console.log('absolutePath: ', absolutePath);

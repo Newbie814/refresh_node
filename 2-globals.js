@@ -1,7 +1,7 @@
 // GLOBALS;
 
-// _dirname - path to current directory
-// _filename - current file name
+// __dirname - path to current directory
+// __filename - current file name
 // require - function to use modules (CommonJS)
 // process - info about env where the program is being executed
 
