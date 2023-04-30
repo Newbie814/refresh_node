@@ -1,0 +1,16 @@
+{
+  "name": "tut_node",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/Newbie814/refresh_node.git",
+  "author": "Newbie814 <96838174+Newbie814@users.noreply.github.com>",
+  "scripts": {
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
